@@ -16,9 +16,9 @@ const Home: NextPage = () => {
             </div>
           ))}
         </ul>
-        <ul>
+        <ul className='space-y-2'>
           {['a', 'b', 'c', ''].map((element, idx) => (
-            <div key={idx} className='mb-2'>
+            <div key={idx}>
               <li className='bg-red-500 empty:hidden'>{element}</li>
             </div>
           ))}
