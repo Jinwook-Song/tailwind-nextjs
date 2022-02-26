@@ -2,10 +2,12 @@ import type { NextPage } from 'next';
 
 const Home: NextPage = () => {
   return (
-    <div className='dark bg-slate-400 py-20 px-8 lg:place-content-center grid md:grid-cols-2 lg:grid-cols-3 gap-4 space-y-5 min-h-screen'>
+    <div className='bg-[url("/vercel.svg")] dark bg-slate-400 py-20 px-8 lg:place-content-center grid md:grid-cols-2 lg:grid-cols-3 gap-4 space-y-5 min-h-screen'>
       {/* firt card */}
-      <div className='bg-white dark:bg-slate-500 p-6 flex flex-col justify-between rounded-lg shadow-2xl'>
-        <span className='font-semibold text-3xl'>Select Item</span>
+      <div className=' bg-white dark:bg-slate-500 p-6 flex flex-col justify-between rounded-lg shadow-2xl'>
+        <span className='font-semibold text-[40px] text-[#dadada]'>
+          Select Item
+        </span>
         <ul>
           {[1, 2, 3, 4].map((i) => (
             <div
