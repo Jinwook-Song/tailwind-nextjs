@@ -2,8 +2,9 @@ import type { NextPage } from 'next';
 
 const Home: NextPage = () => {
   return (
-    <div className='bg-slate-400 py-20 px-8 lg:place-content-center grid md:grid-cols-2 lg:grid-cols-3 gap-4 space-y-5 min-h-screen'>
-      <div className='bg-white p-6 flex flex-col justify-between rounded-lg shadow-2xl'>
+    <div className='dark bg-slate-400 py-20 px-8 lg:place-content-center grid md:grid-cols-2 lg:grid-cols-3 gap-4 space-y-5 min-h-screen'>
+      {/* firt card */}
+      <div className='bg-white dark:bg-slate-500 p-6 flex flex-col justify-between rounded-lg shadow-2xl'>
         <span className='font-semibold text-3xl'>Select Item</span>
         <ul>
           {[1, 2, 3, 4].map((i) => (
@@ -34,7 +35,7 @@ const Home: NextPage = () => {
           Checkout
         </button>
       </div>
-
+      {/* second card */}
       <div className='bg-white overflow-hidden rounded-lg shadow-2xl group'>
         <div className='bg-blue-500 portrait:bg-green-500 landscape:bg-yellow-500 p-6 pb-14 lg:pb-32'>
           <span className='text-white text-2xl'>Profile</span>
@@ -57,7 +58,7 @@ const Home: NextPage = () => {
           </div>
         </div>
       </div>
-
+      {/* third card */}
       <div className='bg-white p-6 rounded-lg shadow-2xl md:col-span-2 lg:col-span-1'>
         <div className='flex mb-5 justify-between items-center'>
           <span>&larr;</span>
