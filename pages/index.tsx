@@ -1,12 +1,18 @@
 import type { NextPage } from 'next';
+import { useRouter } from 'next/router';
 import Layout from '../components/layout';
 
 const Home: NextPage = () => {
+  const router = useRouter();
+  function goToItemDetail(idx: number) {
+    router.push(`/items/${idx}`);
+  }
   return (
     <Layout title='홈' hasTabBar>
       <div className='flex flex-col space-y-5'>
         {[...Array(10)].map((_, i) => (
           <div
+            onClick={() => goToItemDetail(i)}
             key={i}
             className='flex border-b px-4 pb-4 cursor-pointer justify-between '
           >

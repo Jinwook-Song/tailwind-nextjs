@@ -12,6 +12,7 @@ interface ILayout {
 
 const Layout = ({ title, canGoBack, hasTabBar, children }: ILayout) => {
   const router = useRouter();
+  const path = router.pathname;
   function handleGoBack() {
     router.back();
   }
@@ -47,7 +48,12 @@ const Layout = ({ title, canGoBack, hasTabBar, children }: ILayout) => {
       {hasTabBar ? (
         <nav className='bg-white max-w-3xl text-gray-700 border-t fixed bottom-0 w-full px-10 pb-5 pt-3 flex justify-between text-xs'>
           <Link href='/'>
-            <a className='flex flex-col items-center space-y-2 cursor-pointer'>
+            <a
+              className={cls(
+                'flex flex-col items-center space-y-2 cursor-pointer',
+                path === '/' ? 'text-orange-500' : ''
+              )}
+            >
               <svg
                 xmlns='http://www.w3.org/2000/svg'
                 className='h-6 w-6'
@@ -66,7 +72,12 @@ const Layout = ({ title, canGoBack, hasTabBar, children }: ILayout) => {
             </a>
           </Link>
           <Link href='/community'>
-            <a className='flex flex-col items-center space-y-2 cursor-pointer'>
+            <a
+              className={cls(
+                'flex flex-col items-center space-y-2 cursor-pointer',
+                path === '/community' ? 'text-orange-500' : ''
+              )}
+            >
               <svg
                 xmlns='http://www.w3.org/2000/svg'
                 className='h-6 w-6'
@@ -85,7 +96,12 @@ const Layout = ({ title, canGoBack, hasTabBar, children }: ILayout) => {
             </a>
           </Link>
           <Link href='/chats'>
-            <a className='flex flex-col items-center space-y-2 cursor-pointer'>
+            <a
+              className={cls(
+                'flex flex-col items-center space-y-2 cursor-pointer',
+                path === '/chats' ? 'text-orange-500' : ''
+              )}
+            >
               <svg
                 xmlns='http://www.w3.org/2000/svg'
                 className='h-6 w-6'
@@ -104,7 +120,12 @@ const Layout = ({ title, canGoBack, hasTabBar, children }: ILayout) => {
             </a>
           </Link>
           <Link href='/streams'>
-            <a className='flex flex-col items-center space-y-2 cursor-pointer'>
+            <a
+              className={cls(
+                'flex flex-col items-center space-y-2 cursor-pointer',
+                path === '/streams' ? 'text-orange-500' : ''
+              )}
+            >
               <svg
                 xmlns='http://www.w3.org/2000/svg'
                 className='h-6 w-6'
@@ -123,7 +144,12 @@ const Layout = ({ title, canGoBack, hasTabBar, children }: ILayout) => {
             </a>
           </Link>
           <Link href='/profile'>
-            <a className='flex flex-col items-center space-y-2 cursor-pointer'>
+            <a
+              className={cls(
+                'flex flex-col items-center space-y-2 cursor-pointer',
+                path === '/profile' ? 'text-orange-500' : ''
+              )}
+            >
               <svg
                 xmlns='http://www.w3.org/2000/svg'
                 className='h-6 w-6'
