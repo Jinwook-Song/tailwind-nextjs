@@ -1,7 +1,7 @@
 import { cls } from '../libs/utils';
 
 interface IButton {
-  large: boolean;
+  large?: boolean;
   text: string;
   [key: string]: any;
 }
