@@ -18,14 +18,9 @@ const Layout = ({ title, canGoBack, hasTabBar, children }: ILayout) => {
   }
   return (
     <div>
-      <div
-        className={cls(
-          'w-full max-w-3xl bg-white text-lg font-medium px-5 py-3 fixed top-0 text-gray-800 border-b flex',
-          canGoBack ? 'justify-start' : 'justify-center'
-        )}
-      >
+      <div className='bg-white w-full h-12 max-w-3xl justify-center text-lg px-10 font-medium fixed text-gray-800 border-b top-0 flex items-center'>
         {canGoBack ? (
-          <button onClick={handleGoBack}>
+          <button onClick={handleGoBack} className='absolute left-4'>
             <svg
               xmlns='http://www.w3.org/2000/svg'
               className='h-6 w-6'
@@ -42,7 +37,9 @@ const Layout = ({ title, canGoBack, hasTabBar, children }: ILayout) => {
             </svg>
           </button>
         ) : null}
-        {title ? <span>{title}</span> : null}
+        {title ? (
+          <span className={cls(canGoBack ? 'mx-auto' : '')}>{title}</span>
+        ) : null}
       </div>
       <div className={cls('pt-16', hasTabBar ? 'pb-24' : '')}>{children}</div>
       {hasTabBar ? (
@@ -51,7 +48,9 @@ const Layout = ({ title, canGoBack, hasTabBar, children }: ILayout) => {
             <a
               className={cls(
                 'flex flex-col items-center space-y-2 cursor-pointer',
-                path === '/' ? 'text-orange-500' : ''
+                path === '/'
+                  ? 'text-orange-500'
+                  : 'hover:text-gray-500 transition-colors'
               )}
             >
               <svg
@@ -75,7 +74,9 @@ const Layout = ({ title, canGoBack, hasTabBar, children }: ILayout) => {
             <a
               className={cls(
                 'flex flex-col items-center space-y-2 cursor-pointer',
-                path === '/community' ? 'text-orange-500' : ''
+                path === '/community'
+                  ? 'text-orange-500'
+                  : 'hover:text-gray-500 transition-colors'
               )}
             >
               <svg
@@ -92,14 +93,16 @@ const Layout = ({ title, canGoBack, hasTabBar, children }: ILayout) => {
                   d='M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z'
                 />
               </svg>
-              <span>동네생활 </span>
+              <span>동네생활</span>
             </a>
           </Link>
           <Link href='/chats'>
             <a
               className={cls(
                 'flex flex-col items-center space-y-2 cursor-pointer',
-                path === '/chats' ? 'text-orange-500' : ''
+                path === '/chats'
+                  ? 'text-orange-500'
+                  : 'hover:text-gray-500 transition-colors'
               )}
             >
               <svg
@@ -123,7 +126,9 @@ const Layout = ({ title, canGoBack, hasTabBar, children }: ILayout) => {
             <a
               className={cls(
                 'flex flex-col items-center space-y-2 cursor-pointer',
-                path === '/streams' ? 'text-orange-500' : ''
+                path === '/streams'
+                  ? 'text-orange-500'
+                  : 'hover:text-gray-500 transition-colors'
               )}
             >
               <svg
@@ -147,7 +152,9 @@ const Layout = ({ title, canGoBack, hasTabBar, children }: ILayout) => {
             <a
               className={cls(
                 'flex flex-col items-center space-y-2 cursor-pointer',
-                path === '/profile' ? 'text-orange-500' : ''
+                path === '/profile'
+                  ? 'text-orange-500'
+                  : 'hover:text-gray-500 transition-colors'
               )}
             >
               <svg

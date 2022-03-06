@@ -3,7 +3,7 @@ import Layout from '../../components/layout';
 
 const ItemDetail: NextPage = () => {
   return (
-    <Layout canGoBack>
+    <Layout canGoBack title='test'>
       <div className='px-4 pb-10'>
         <div className='mb-8'>
           <div className='h-96 bg-slate-300' />
